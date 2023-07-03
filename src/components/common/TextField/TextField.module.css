@@ -1,0 +1,41 @@
+.TextField {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: var(--txt-sm);
+  font-weight: 400;
+}
+
+.TextField .TextField-input {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid transparent;
+  transition: border-color 0.25s var(--easing);
+  padding: var(--p-s);
+  font-size: var(--txt-sm);
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  height: 34px;
+  min-height: 34px;
+  overflow-y: hidden;
+}
+.TextField-input:focus {
+  border-color: var(--blue);
+  box-shadow: inset 0 0 1px var(--blue);
+}
+.TextField.asError .TextField-input,
+.TextField.asError .TextField-input:focus {
+  box-shadow: inset 1px 1px 1px var(--red), inset 0 0 1px var(--red),
+    inset -1px -1px 1px var(--red);
+}
+
+.TextField-error {
+  font-size: var(--txt-xs);
+  color: var(--red);
+  width: 100%;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,54 @@
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: inherit;
+  border: none;
+  border-radius: 2px;
+  padding: calc(var(--p-s) * 1.12) var(--p-m);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease-in-out;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.primary {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.small {
+  padding: var(--p-s);
+}
+
+.middle {
+  padding: calc(var(--p-s) * 1.12) var(--p-m);
+}
+
+.large {
+  padding: calc(var(--p-s) * 1.4) calc(var(--p-m) * 1.75);
+}
+
+.wFull {
+  width: 100%;
+}
+
+.ripple {
+  position: absolute;
+  z-index: 1;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background-color: currentColor;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+@keyframes ripple {
+  to {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
